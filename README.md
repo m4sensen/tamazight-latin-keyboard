@@ -47,7 +47,7 @@ Tested on **Fedora 49** (Wayland). Should work on Ubuntu/Debian GNOME, openSUSE,
 
 ```bash
 # Clone or download the script
-git clone https://github.com/your-username/tamazight-keyboard.git
+git clone https://github.com/m4sensen/kabyle-latin-keyboard.git
 cd tamazight-keyboard
 
 bash tamazight-xkb.sh install
