@@ -2,36 +2,18 @@
 
 A one-script installer that adds a **Tamazight (QWERTY - Latin - Tamamerit) keyboard layout** to GNOME on Linux — no manual XKB editing, no reboot required.
 
-Built for Fedora 49 and tested on Wayland. Should work on any GNOME-based distro that uses `gsettings` for input source management.
-
 ---
 
 ## What It Does
 
 The layout follows a **QWERTY base** and adds Tamazight-specific characters where they naturally belong, using the **Shift** layer for uppercase and dedicated keys for phonemes that don't exist in standard Latin.
 
-### Key Mapping
+### Keyboard layout
 
-| Key | Unshifted | Shifted | Notes               |
-| --- | --------- | ------- | ------------------- |
-| `r` | `r`       | `R`     | AltGr: `ṛ` / `Ṛ`    |
-| `t` | `t`       | `T`     | AltGr: `ṭ` / `Ṭ`    |
-| `s` | `s`       | `S`     | AltGr: `ṣ` / `Ṣ`    |
-| `d` | `d`       | `D`     | AltGr: `ḍ` / `Ḍ`    |
-| `g` | `g`       | `G`     | AltGr: `ǧ` / `Ǧ`    |
-| `z` | `z`       | `Z`     | AltGr: `ẓ` / `Ẓ`    |
-| `c` | `c`       | `C`     | AltGr: `č` / `Č`    |
-| `o` | `ɛ`       | `Ɛ`     | -                   |
-| `p` | `ḥ`       | `Ḥ`     | -                   |
-| `v` | `ɣ`       | `Ɣ`     | -                   |
-| `4` | `4`       | `ⵣ`     | Tifinagh Z (U+2D63) |
-| `,` | `,`       | `«`     | French guillemet    |
-| `.` | `.`       | `»`     | French guillemet    |
-
-![Layout 1](src/1.png)
-![Layout 2](src/2.png)
-![Layout 3](src/3.png)
-![Layout 4](src/4.png)
+<img src="src/1.png" alt="Layout 1" width="400"/>
+<img src="src/2.png" alt="Layout 2" width="400"/>
+<img src="src/3.png" alt="Layout 3" width="400"/>
+<img src="src/4.png" alt="Layout 4" width="400"/>
 
 _Visual reference for the key mapping._
 
@@ -60,7 +42,7 @@ bash main.sh install
 
 The script will:
 
-1. Write the XKB symbols file to `~/.config/xkb/symbols/ber`
+1. Write the XKB symbols file to `~/.config/xkb/symbols/tmz`
 2. Write the rules file to `~/.config/xkb/rules/evdev.xml`
 3. Add the layout to GNOME's input sources via `gsettings`
 
@@ -80,7 +62,7 @@ Or open **Settings → Keyboard → Input Sources** to manage layouts visually.
 
 The layout appears as **"Tamazight (QWERTY, Latin, Tamamerit)"** in the GNOME input source selector.
 
-![[5.png]]
+<img src="src/5.png" alt="Window" width="400"/>
 _Screenshot showing the layout in GNOME input sources._
 
 ---
@@ -102,7 +84,7 @@ GNOME supports **user-local XKB configuration** at `~/.config/xkb/` — no syste
 ```
 ~/.config/xkb/
 ├── symbols/
-│   └── ber          ← XKB symbols definition (the actual key mappings)
+│   └── tmz          ← XKB symbols definition (the actual key mappings)
 └── rules/
     └── evdev.xml    ← Layout metadata (name, language tag, variant list)
 ```
@@ -115,11 +97,11 @@ The layout is then registered in GNOME's input sources using `gsettings`, which 
 
 ## Layout Design Decisions
 
-- **QWERTY base** — familiar to anyone typing Latin-script languages, minimal relearning curve.
-- **Phoneme-first placement** — emphatic consonants (`ṣ ḍ ṭ ṛ ẓ`) are on AltGr of their plain equivalents, so muscle memory transfers.
-- **Epsilon (`ɛ`) on `o` and Gamma (`ɣ`) on `v`** — these are positionally unintuitive but chosen to avoid displacing common Latin characters.
-- **Tifinagh Z (`ⵣ`) on Shift+4** — a nod to the symbol's cultural significance; easily accessible without displacing number-row logic.
-- **`«` and `»` on Shift+`,`/`Shift+.`** — Tamazight publishing often follows French typographic conventions.
+- Emphatic consonants at Level 3 (AltGr) — ṣ ḍ ṭ ṛ ẓ are placed on AltGr+s d t r z because they are phonetically the emphatic versions of those exact consonants. The physical relationship between the plain and emphatic form is built into the layout itself.
+- o → ɛ and v → ɣ — Tamazight has no o or v sounds. Rather than leaving those keys as dead weight, they are replaced entirely with ɛ (epsilon) and ɣ (gamma) — two phonemes that are central to the language and now have dedicated, unshifted keys.
+- ḥ is not on h — typing ḥ requires holding Right Alt, but h is on the right side of the keyboard — directly above the Right Alt key. Reaching both simultaneously is physically awkward. Placing ḥ on p instead (an unused key, since Tamazight has no p sound) keeps it accessible with a comfortable left-hand + right-thumb motion.
+- ⵣ replaces $ on Shift+4 — Amazighs has no currency symbol on the keyboard that reflects daily life. ⵣ (Tifinagh Yaz) is not just a character — it is the symbol of Amazigh identity. It belongs on the keyboard at least as much as a dollar sign does, and Shift+4 gives it a permanent, easy-to-remember home.
+- « and » replace < and > — Tamazight is a spoken language with a rich oral tradition. When it is written, quotation marks appear constantly, so they replace the angle brackets that would otherwise sit unused on those keys.
 
 ---
 
@@ -157,7 +139,8 @@ Issues, corrections to the key mappings, and compatibility reports from other di
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+This project is dedicated to the public domain under CC0 1.0. See [LICENSE](LICENSE)
+for details.
 
 ---
 
