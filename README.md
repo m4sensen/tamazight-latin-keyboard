@@ -27,8 +27,9 @@ The layout follows a **QWERTY base** and adds Tamazight-specific characters wher
 | `4` | `4`       | `ⵣ`     | Tifinagh Z (U+2D63) |
 | `,` | `,`       | `«`     | French guillemet    |
 | `.` | `.`       | `»`     | French guillemet    |
-![[1.png]]![[2.png]]![[3.png]]
-![[4.png]]
+
+![[1.png]]![[2.png]]![[3.png]]![[4.png]]
+
 _Visual reference for the key mapping._
 
 ---
@@ -62,9 +63,6 @@ The script will:
 
 No `sudo` needed. Everything installs to your home directory.
 
-![#2](#)
-_Illustration of the installation process._
-
 ---
 
 ## Switching to the Layout
@@ -79,7 +77,7 @@ Or open **Settings → Keyboard → Input Sources** to manage layouts visually.
 
 The layout appears as **"Tamazight (QWERTY, Latin, Tamamerit)"** in the GNOME input source selector.
 
-![[6.png]]
+![[5.png]]
 _Screenshot showing the layout in GNOME input sources._
 
 ---
@@ -161,7 +159,3 @@ MIT License. See [LICENSE](LICENSE) for details.
 ---
 
 _Made with love for Tamazight. ❤️ⵣ_
-
-```
-
-```
