@@ -31,7 +31,7 @@ xkb_symbols "custom" {
 
     // Include standard definitions so Shift/Control work normally
     include "pc"
-    include "latin"
+    // include "latin"
 
     // Number row
     key <TLDE> { [ grave, asciitilde ] };

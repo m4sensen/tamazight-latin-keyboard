@@ -1,6 +1,6 @@
 # ⌨️ Tamazight Keyboard Layout for Linux
 
-A one-script installer that adds a **Tamazight (Latin/Tamamerit) keyboard layout** to GNOME on Linux — no manual XKB editing, no reboot required.
+A one-script installer that adds a **Tamazight (QWERTY - Latin - Tamamerit) keyboard layout** to GNOME on Linux — no manual XKB editing, no reboot required.
 
 Built for Fedora 49 and tested on Wayland. Should work on any GNOME-based distro that uses `gsettings` for input source management.
 
