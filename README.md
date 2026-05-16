@@ -130,6 +130,9 @@ The layout uses `include "level3(ralt_switch)"` which maps Right Alt to the Leve
 **Script fails on non-GNOME desktops**
 This script is GNOME-specific. For KDE, XFCE, or bare X11 setups, the XKB files can still be used — but you'll need to apply them manually (e.g. via `setxkbmap`).
 
+**Yaz (ⵣ) symbol does not appear**
+The Yaz character (ⵣ, Unicode U+2D63) may not render if the system lacks fonts with Tifinagh support. Install a font package that includes this Unicode block — [Noto Sans Tifinagh](https://fonts.google.com/noto/specimen/Noto+Sans+Tifinagh?preview.script=Tfng) on Google Fonts is a good option.
+
 ---
 
 ## Contributing
